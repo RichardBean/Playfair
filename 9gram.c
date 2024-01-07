@@ -4,6 +4,17 @@
 #include <stdint.h> // For uint8_t and uint32_t
 
 // stats: 9-gram beijinghouse v7: https://drive.proton.me/urls/E3FXCCVK5M#vZxvy1ZK94XN (15.4 GB download -- 88.8 GB ram)
+
+// compressed: 16543293071 bytes
+// uncompressed: 52947605600 bytes
+// md5 459a6fe9cc83d91e9570c53c6640a4c2
+// sha1 8fa036c3a73ecd77b755f2ac466f42657a84d5e0
+
+// input data unknown, but suggested at https://github.com/louiehelm/azdecrypt/tree/main/AZdecrypt/N-grams
+// Jarlve's n-gram files draws heavily upon the collection of language data at:
+// https://wortschatz.uni-leipzig.de/en/usage
+// https://creativecommons.org/licenses/by-nc/4.0/
+
 // linked from https://github.com/louiehelm/azdecrypt/tree/main
 
 // global variables for lookup
@@ -35,8 +46,8 @@ unsigned char fd[65535*4+65535*4+255*4];
     // Open gzip file
     gzFile gzf = gzopen("9-grams_english_beijinghouse_10TB_v7.txt.gz", "rb");
 
-    //while (pivot < top_pivot) {
-    while (pivot < 68) {
+    //while (pivot < 68) { // this line for testing just A to C
+    while (pivot < top_pivot) {
  
 	uint32_t encoder_count; 	
         buf_len_s = 0;
